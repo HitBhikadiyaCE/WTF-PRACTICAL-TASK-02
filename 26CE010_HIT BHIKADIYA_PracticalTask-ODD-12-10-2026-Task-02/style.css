@@ -1,0 +1,237 @@
+/* ITUS102 | Practical Assessment | 12-10-2026 | Task 02 */
+* {
+    box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #1e293b;
+    /* S3 fixed: added missing colon after background-color with a rich mint-pearl gradient */
+    background-color: #f1f6f9;
+    background: radial-gradient(circle at 10% 20%, #f0fdf4 0%, #e0f2fe 90%);
+    min-height: 100vh;
+}
+
+.site-header {
+    padding: 26px 8%;
+    /* Deep oceanic teal into cyan-emerald gradient */
+    background: linear-gradient(135deg, #042f2e 0%, #0d9488 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(13, 148, 136, 0.25);
+    border-bottom: 3px solid #14b8a6;
+}
+
+/* S4 fixed: changed .pageTitle to #pageTitle to match the HTML ID attribute */
+#pageTitle {
+    margin: 0 0 14px;
+    letter-spacing: 0.8px;
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    /* TODO M3: Use display:flex and justify-content:space-between here. */
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #f0fdfa;
+    text-decoration: none;
+    padding: 8px 22px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-links a:hover {
+    background: #14b8a6;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(20, 184, 166, 0.4);
+    text-decoration: none;
+}
+
+main {
+    width: min(960px, 92%);
+    margin: 36px auto;
+}
+
+h2 {
+    margin-top: 0;
+    color: #0f766e;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    margin-top: 0;
+    color: #115e59;
+    font-weight: 700;
+}
+
+.cards {
+    /* TODO M4: Use CSS Grid with two equal-width columns. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 12px 30px -4px rgba(15, 118, 110, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+    border-top: 5px solid #0d9488;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px -6px rgba(15, 118, 110, 0.16);
+}
+
+.card p {
+    line-height: 1.65;
+    color: #475569;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    color: #0f172a;
+    font-size: 0.92rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #0d9488;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.18);
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 14px 22px;
+    color: #ffffff;
+    border: 0;
+    /* Coral sunset button to create striking contrast with teal */
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.45);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.result-card {
+    border: none;
+    border-left: 6px solid #059669;
+    background: linear-gradient(145deg, #ffffff 0%, #ecfdf5 100%);
+    box-shadow: 0 12px 28px -4px rgba(5, 150, 105, 0.14);
+}
+
+#result {
+    font-weight: 800;
+    color: #065f46;
+    overflow-wrap: anywhere;
+    background: #d1fae5;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1.5px solid #a7f3d0;
+}
+
+pre {
+    font-size: 14px;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    /* Sleek cyber terminal theme */
+    background: #042f2e;
+    color: #5eead4;
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 4px solid #14b8a6;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.notice {
+    padding: 14px 22px;
+    margin: 22px 0;
+    background: linear-gradient(90deg, #fff7ed 0%, #ffedd5 100%);
+    border: 1px solid #fed7aa;
+    border-left: 5px solid #f97316;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.1);
+}
+
+.notice h2 {
+    color: #c2410c;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+}
+
+.notice p {
+    color: #9a3412;
+    margin: 0;
+    font-weight: 500;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 22px;
+    background: #042f2e;
+    color: #ccfbf1;
+    font-size: 0.95rem;
+    border-top: 1px solid #134e4a;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    /* TODO M5: Make .cards one column and .nav-links vertical (column). */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+}

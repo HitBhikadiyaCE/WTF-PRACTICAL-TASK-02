@@ -1,0 +1,33 @@
+ITUS102 - PRACTICAL EXAMINATION | DEBUGGING AND IMPLEMENTATION REPORT
+Date: 12-10-2026 | Task 02 - Campus Canteen Order Calculator
+
+Enrollment No.: [Your Enrollment Number]
+Name: [Your Name]
+
+SIMPLE BUGS (write a brief explanation for each)
+Bug | Original problem                          | Correction made                         | Why required
+S1  | Typo in href attribute (#calcuator)       | Changed href to "#calculator"            | To allow the in-page navigation link to scroll properly to the calculator section.
+S2  | Generic <div> used for footer info       | Replaced <div> with semantic <footer>    | To satisfy HTML5 semantic requirements for site-footer content.
+S3  | Missing colon after "background-color"    | Added ":" between property and value     | CSS syntax requires a colon between property names and property values.
+S4  | Class selector .pageTitle used for an ID  | Changed selector to "#pageTitle"        | In HTML the element has id="pageTitle", so an ID selector (#) is required.
+S5  | Subtotal used addition (+) operator       | Changed subtotal = unitPrice * quantity | Subtotal is calculated by multiplying unit price by item count, not by adding them.
+S6  | Service charge set to 15% (0.15)         | Changed multiplier to 0.05 (5%)         | The policy specifically dictates a 5% service charge on the subtotal.
+
+CODE COMPLETION / IMPLEMENTATION (briefly state what was completed)
+M1: Added <meta charset="UTF-8"> and <meta name="viewport" content="width=device-width, initial-scale=1.0"> inside <head>.
+M2: Added an <aside class="notice"> tag containing <h2>Important Note</h2> and a reminder sentence to check inputs.
+M3: Configured .nav-links with display: flex and justify-content: space-between in style.css.
+M4: Configured .cards with display: grid and grid-template-columns: 1fr 1fr in style.css.
+M5: Added responsive styles in @media (max-width: 600px) setting .cards to 1fr and .nav-links flex-direction to column.
+M6: Implemented calculateDiscount(amount, percentage) returning (amount * percentage) / 100.
+D1: Implemented getRate(type) using if-else returning 10 for Student, 5 for Staff, and 0 for Visitor.
+D2: Implemented calculateTotal(subtotal, discount, serviceCharge) returning subtotal - discount + serviceCharge.
+D3: Implemented buildBreakdown(unitPrice, quantity) using a for loop (i = 1 to quantity) to compute and display running item costs.
+
+FUNCTIONAL TEST
+Test input: Price: ₹100, Quantity: 3, Customer: Student
+Observed result: Subtotal: ₹300 | Discount: ₹30 | Service: ₹15 | Payable: ₹285 | Item 3 running cost: ₹300
+Mobile layout checked (Yes/No): Yes
+
+GIT VERSION CONTROL
+git log -1 https://github.com/HitBhikadiyaCE/WTF-PRACTICAL-TASK-02.git
